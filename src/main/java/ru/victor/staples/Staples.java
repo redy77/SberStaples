@@ -15,11 +15,11 @@ public class Staples {
         char[] staples = str.toCharArray();
         for (char staple : staples) {
             if (queue.size() != 0 && staple == queue.peek()) {
-                char cur = queue.poll();
-                result.append(cur);
+                result.append(queue.poll());
                 count += 2;
                 iter.remove(iter.size() - 1);
-            } else if (staple == '(') {
+            }
+            if (staple == '(') {
                 queue.offer(')');
                 result.append('(');
                 iter.add(result.length() - 1);
